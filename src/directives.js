@@ -2,7 +2,7 @@ const { ParaguayValidators } = require('paraguay-validators');
 const adjustRegex = /\D/;
 const validator = new ParaguayValidators();
 
-angular.module('paraguay.validators')
+angular.module('paraguay.validators', [])
     .directive('ruc', [() => {
         return {
             restrict: 'A',
@@ -10,19 +10,19 @@ angular.module('paraguay.validators')
             link: generalRUCLink
         };
     }])
-    .directive('compary-ruc', [() => {
+    .directive('companyRuc', [() => {
         return {
             restrict: 'A',
             require: 'ngModel',
             link: companyRUCLink
-        }
+        };
     }])
-    .directive('individual-ruc', [() => {
+    .directive('individualRuc', [() => {
         return {
             restrict: 'A',
             require: 'ngModel',
             link: individualRUCLink
-        }
+        };
     }]);
 
 
@@ -44,7 +44,7 @@ const generalRUCLink = (scope, elm, attr, ctrl) => {
 const companyRUCLink = (scope, elm, attr, ctrl) => {
     if (!ctrl) return;
 
-    ctrl.$validators.companyruc = (modelValue, viewValue) => {
+    ctrl.$validators.ruc = (modelValue, viewValue) => {
         if (!viewValue)
             return true;
 
@@ -59,7 +59,7 @@ const companyRUCLink = (scope, elm, attr, ctrl) => {
 const individualRUCLink = (scope, elm, attr, ctrl) => {
     if (!ctrl) return;
 
-    ctrl.$validators.companyruc = (modelValue, viewValue) => {
+    ctrl.$validators.ruc = (modelValue, viewValue) => {
         if (!viewValue)
             return true;
 
@@ -67,8 +67,6 @@ const individualRUCLink = (scope, elm, attr, ctrl) => {
         if (adjustedValue.length < 8)
             return true;
 
-        return validator.RUC.validateCompanyRUC(adjustedValue);
+        return validator.RUC.validateIndividualRUC(adjustedValue);
     };
 };
-
-module.exports = { generalRUCLink, companyRUCLink, individualRUCLink };
