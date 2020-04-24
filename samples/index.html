@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Paraguay Validators</title>
+    <meta name="description" content="Paraguay Validators">
+    <meta name="author" content="Jorge Calijurio">
+
+    <style type="text/css">
+        body {
+            font-family: Calibri;
+        }
+
+        .danger {
+            text-color: #f00;
+        }
+    </style>
+
+</head>
+
+<body ng-app>
+    <h1>Paraguay Validators</h1>
+    <a href="https://github.com/jcalijurio/paraguay-validators">GitHub</a>
+
+    <div>
+        <form name="form1" id="form1" novalidate>
+            <div>
+                <label>RUC:</label>
+                <input type="tel" name="generalRUC" id="generalRUC" ruc />
+                <span class="danger" ng-if="form1.generalRUC.$error.ruc">invalid</span>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js"></script>
+</body>
+
+</html>

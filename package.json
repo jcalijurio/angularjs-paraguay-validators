@@ -1,0 +1,25 @@
+{
+  "name": "angularjs-paraguay-validators",
+  "version": "1.0.0",
+  "description": "AngularJS directives for Paraguay data validators",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.7.9",
+    "paraguay-validators": "^1.0.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "gulp": "^4.0.2",
+    "gulp-add-src": "^1.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "^2.0.9",
+    "gulp-uglify": "^3.0.2"
+  }
+}
