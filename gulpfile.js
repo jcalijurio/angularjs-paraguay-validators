@@ -1,9 +1,8 @@
-var { src, dest, watch, task, series, parallel } = require('gulp');
+var { src, dest, task, series } = require('gulp');
 const babel = require('gulp-babel');
 var concat = require('gulp-concat');
 let header = require('gulp-header');
 var uglify = require('gulp-uglify');
-var addsrc = require('gulp-add-src');
 var browserify = require('gulp-browserify');
 
 const banner = `/*
@@ -27,3 +26,15 @@ task('build', () => src(['./src/*.js'])
     .pipe(concat('angularjs-paraguay-validator.min.js'))
     .pipe(dest('dist/'))
 );
+
+task('copy', () =>
+    src(['package.json', 'LICENSE', 'README.md'])
+        .pipe(dest('./dist/'))
+);
+
+task('upload', cb =>
+    cmd('npm publish', { cwd: './dist/' })()
+        .then(() => cb())
+);
+
+task('publish', series('build', 'copy', 'upload'));
