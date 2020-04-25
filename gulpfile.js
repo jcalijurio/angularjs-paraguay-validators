@@ -9,18 +9,21 @@ var browserify = require('gulp-browserify');
 const banner = `/*
  * AngularJS Paraguay Validators
  * License: MIT
- * Project: github.com 
-*/`;
+ * author: Jorge Calijurio <jorge@calweb.com.br>
+ * Project site: https://github.com/jcalijurio/angularjs-paraguay-validators
+*/
+`;
 
 task('build', () => src(['./src/*.js'])
-    .pipe(babel({
-        presets: ['@babel/preset-env']
-    }))
     .pipe(browserify({
         insertGlobals: true,
         debug: false
     }))
+    .pipe(babel({
+        presets: ['@babel/preset-env']
+    }))
     .pipe(uglify())
     .pipe(header(banner))
     .pipe(concat('angularjs-paraguay-validator.min.js'))
-    .pipe(dest('dist/')));
+    .pipe(dest('dist/'))
+);
