@@ -1,6 +1,6 @@
 {
   "name": "angularjs-paraguay-validators",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "AngularJS directives for Paraguay data validators",
   "main": "angularjs-paraguay-validator.min.js",
   "scripts": {
@@ -22,7 +22,11 @@
     "paraguay",
     "paraguai",
     "angular",
-    "angularjs"
+    "angularjs",
+    "ruc mask",
+    "plate mask",
+    "paraguay ruc mask",
+    "paraguay plate mask"
   ],
   "author": {
     "name": "Jorge Calijurio",
