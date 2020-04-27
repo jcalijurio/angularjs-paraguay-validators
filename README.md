@@ -16,7 +16,7 @@ npm i angularjs-paraguay-validators
 Adding script reference
 
 ```html
-<script src="node_modules/angularjs-paraguay-validator/angularjs-paraguay-validator.min.js">
+<script src="node_modules/angularjs-paraguay-validators/angularjs-paraguay-validator.min.js">
 ```
 
 ## Validations ##
