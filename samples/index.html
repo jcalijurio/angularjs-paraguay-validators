@@ -42,17 +42,17 @@
             <h2>RUC</h2>
             <div class="m-top">
                 <label for="generalRUC">Individual and Company RUC:</label>
-                <input type="tel" name="generalRUC" id="generalRUC" ng-model="rucs.general" minlength="8" maxlength="9" ruc />
+                <input type="tel" name="generalRUC" id="generalRUC" ng-model="rucs.general" minlength="11" maxlength="12" ruc />
                 <span class="danger" ng-if="form1.generalRUC.$error.ruc">invalid</span>
             </div>
             <div class="m-top">
                 <label for="individualRUC">RUC Individual:</label>
-                <input type="tel" name="individualRUC" id="individualRUC" ng-model="rucs.individual" minlength="8" maxlength="8" individual-ruc />
+                <input type="tel" name="individualRUC" id="individualRUC" ng-model="rucs.individual" minlength="11" maxlength="12" individual-ruc />
                 <span class="danger" ng-if="form1.individualRUC.$error.ruc">invalid</span>
             </div>
             <div class="m-top">
                 <label for="companyRUC">RUC Company:</label>
-                <input type="tel" name="companyRUC" id="companyRUC" ng-model="rucs.company" minlength="9" maxlength="9" company-ruc />
+                <input type="tel" name="companyRUC" id="companyRUC" ng-model="rucs.company" minlength="12" maxlength="12" company-ruc />
                 <span class="danger" ng-if="form1.companyRUC.$error.ruc">invalid</span>
             </div>
             <h3 class="m-top">Result</h3>

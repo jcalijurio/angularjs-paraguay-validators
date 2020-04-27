@@ -31,7 +31,8 @@
   "license": "MIT",
   "dependencies": {
     "angular": "^1.7.9",
-    "paraguay-validators": "^1.0.11"
+    "paraguay-validators": "^1.0.11",
+    "string-mask": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

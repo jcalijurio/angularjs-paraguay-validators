@@ -1,53 +1,8 @@
-const { generalRUCLink, companyRUCLink, individualRUCLink,
-    generalCarPlate, oldCarPlate, newCarPlate, motorCyclePlate } = require('./links');
-
 angular.module('paraguay.validators', [])
-    .directive('ruc', [() => {
-        return {
-            restrict: 'A',
-            require: 'ngModel',
-            link: generalRUCLink
-        };
-    }])
-    .directive('companyRuc', [() => {
-        return {
-            restrict: 'A',
-            require: 'ngModel',
-            link: companyRUCLink
-        };
-    }])
-    .directive('individualRuc', [() => {
-        return {
-            restrict: 'A',
-            require: 'ngModel',
-            link: individualRUCLink
-        };
-    }])
-    .directive('carPlate', [() => {
-        return {
-            restrict: 'A',
-            require: 'ngModel',
-            link: generalCarPlate
-        };
-    }])
-    .directive('oldCarPlate', [() => {
-        return {
-            restrict: 'A',
-            require: 'ngModel',
-            link: oldCarPlate
-        };
-    }])
-    .directive('newCarPlate', [() => {
-        return {
-            restrict: 'A',
-            require: 'ngModel',
-            link: newCarPlate
-        };
-    }])
-    .directive('motorcyclePlate', [() => {
-        return {
-            restrict: 'A',
-            require: 'ngModel',
-            link: motorCyclePlate
-        };
-    }]);
+    .directive('ruc', [require('./ruc/ruc')])
+    .directive('companyRuc', [require('./ruc/company.ruc')])
+    .directive('individualRuc', [require('./ruc/individual.ruc')])
+    .directive('carPlate', [require('./plate/plate')])
+    .directive('oldCarPlate', [require('./plate/plate.old')])
+    .directive('newCarPlate', [require('./plate/plate.newformat')])
+    .directive('motorcyclePlate', [require('./plate/plate.motorcycle')]);
