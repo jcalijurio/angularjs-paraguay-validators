@@ -6,13 +6,17 @@ const uglify = require('gulp-uglify');
 const browserify = require('gulp-browserify');
 const cmd = require('gulp-run-command').default;
 
-const banner = `/*
- * AngularJS Paraguay Validators
- * License: MIT
- * author: Jorge Calijurio <jorge@calweb.com.br>
- * Project site: https://github.com/jcalijurio/angularjs-paraguay-validators
-*/
-`;
+const pkg = require('./package.json');
+
+const banner = ['/**',
+    ' * <%= pkg.name %>',
+    ' * <%= pkg.description %>',
+    ' * @version v<%= pkg.version %>',
+    ' * @link <%= pkg.homepage %>',
+    ' * @license <%= pkg.license %>',
+    ' */',
+    ''
+].join('\n');
 
 task('build', () => src(['./src/*.js'])
     .pipe(browserify({
@@ -24,7 +28,7 @@ task('build', () => src(['./src/*.js'])
     }))
     .pipe(uglify())
     .pipe(concat('angularjs-paraguay-validator.min.js'))
-    .pipe(header(banner))
+    .pipe(header(banner, { pkg: pkg }))
     .pipe(dest('dist/'))
 );
 
