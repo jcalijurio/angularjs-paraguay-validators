@@ -1,6 +1,7 @@
 AngularJS Paraguay Validators
 ==============
 [![npm version](https://img.shields.io/npm/v/angularjs-paraguay-validators.svg)](https://www.npmjs.com/package/angularjs-paraguay-validators)
+[![Build Status](https://travis-ci.org/jcalijurio/angularjs-paraguay-validators.svg)](https://travis-ci.org/jcalijurio/angularjs-paraguay-validators)
 
 AngularJS Paraguay Validators is a library that provides validators and masks for RUC numbers and Car Plate / AngularJS Paraguay Validators és una biblioteca que proporciona validaciones y máscaras para números RUC y Placas de vehículo.
 This library is a port of [paraguay-validators](https://www.npmjs.com/package/paraguay-validators) package for AngularJS.
