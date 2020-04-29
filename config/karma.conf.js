@@ -4,7 +4,13 @@ module.exports = config => {
     var configuration = {
         basePath: '../src',
         frameworks: ['jasmine', 'browserify'],
-        browsers: [/*'Firefox',*/ 'Chrome'],
+        browsers: [/*'Firefox',*/ 'Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
+        customLaunchers: {
+            ChromeHeadlessNoSandbox: {
+                base: 'ChromeHeadless',
+                flags: ['--no-sandbox']
+            }
+        },
         files: [
             '../node_modules/angular/angular.js',
             '../node_modules/angular-mocks/angular-mocks.js',
