@@ -42,17 +42,17 @@
             <h2>RUC</h2>
             <div class="m-top">
                 <label for="generalRUC">Individual and Company RUC:</label>
-                <input type="tel" name="generalRUC" id="generalRUC" ng-model="rucs.general" minlength="11" maxlength="12" ruc />
+                <input type="tel" name="generalRUC" id="generalRUC" ng-model="rucs.general" minlength="11" maxlength="12" py-ruc />
                 <span class="danger" ng-if="form1.generalRUC.$error.ruc">invalid</span>
             </div>
             <div class="m-top">
                 <label for="individualRUC">RUC Individual:</label>
-                <input type="tel" name="individualRUC" id="individualRUC" ng-model="rucs.individual" minlength="11" maxlength="12" individual-ruc />
+                <input type="tel" name="individualRUC" id="individualRUC" ng-model="rucs.individual" minlength="11" maxlength="12" py-individual-ruc />
                 <span class="danger" ng-if="form1.individualRUC.$error.ruc">invalid</span>
             </div>
             <div class="m-top">
                 <label for="companyRUC">RUC Company:</label>
-                <input type="tel" name="companyRUC" id="companyRUC" ng-model="rucs.company" minlength="12" maxlength="12" company-ruc />
+                <input type="tel" name="companyRUC" id="companyRUC" ng-model="rucs.company" minlength="12" maxlength="12" py-company-ruc />
                 <span class="danger" ng-if="form1.companyRUC.$error.ruc">invalid</span>
             </div>
             <h3 class="m-top">Result</h3>
@@ -62,22 +62,22 @@
             <h2>Car Plates</h2>
             <div class="m-top">
                 <label for="generalPlate">All car plate formats:</label>
-                <input type="text" name="generalPlate" id="generalPlate" ng-model="plates.general" minlength="6" maxlength="8" car-plate />
+                <input type="text" name="generalPlate" id="generalPlate" ng-model="plates.general" minlength="6" maxlength="8" py-car-plate />
                 <span class="danger" ng-if="form1.generalPlate.$error.carplate">invalid</span>
             </div>
             <div class="m-top">
                 <label for="oldPlate">Old car plate format:</label>
-                <input type="text" name="oldPlate" id="oldPlate" ng-model="plates.old" minlength="6" maxlength="7" old-car-plate />
+                <input type="text" name="oldPlate" id="oldPlate" ng-model="plates.old" minlength="6" maxlength="7" py-old-car-plate />
                 <span class="danger" ng-if="form1.oldPlate.$error.carplate">invalid</span>
             </div>
             <div class="m-top">
                 <label for="oldPlate">New car plate format:</label>
-                <input type="text" name="newCarPlate" id="newCarPlate" ng-model="plates.newFormat" minlength="7" maxlength="8" new-car-plate />
+                <input type="text" name="newCarPlate" id="newCarPlate" ng-model="plates.newFormat" minlength="7" maxlength="8" py-new-car-plate />
                 <span class="danger" ng-if="form1.newCarPlate.$error.carplate">invalid</span>
             </div>
             <div class="m-top">
                 <label for="oldPlate">Motorcycle plate format:</label>
-                <input type="text" name="motorcyclePlate" id="motorcyclePlate" ng-model="plates.motorcycle" minlength="7" maxlength="8" motorcycle-plate />
+                <input type="text" name="motorcyclePlate" id="motorcyclePlate" ng-model="plates.motorcycle" minlength="7" maxlength="8" py-motorcycle-plate />
                 <span class="danger" ng-if="form1.motorcyclePlate.$error.carplate">invalid</span>
             </div>
             <h3 class="m-top">Result</h3>

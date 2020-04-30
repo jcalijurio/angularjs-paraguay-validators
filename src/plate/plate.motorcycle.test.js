@@ -2,13 +2,13 @@
 
 require('../directives');
 
-describe('motorcycle-plate', () => {
+describe('py-motorcycle-plate', () => {
 
     beforeEach(angular.mock.module('paraguay.validators'));
 
     it('must be valid when the value is valid', () => {
         // Arrange
-        const input = TestUtil.compile('<input type="text" ng-model="model" motorcycle-plate >');
+        const input = TestUtil.compile('<input type="text" ng-model="model" py-motorcycle-plate >');
         const tests = [
             { value: '123ABCD', viewValue: '123-ABCD' },
         ];
@@ -24,7 +24,7 @@ describe('motorcycle-plate', () => {
 
     it('must ignore validity when the value size is less than 7', () => {
         // Arrange
-        const input = TestUtil.compile('<input type="text" ng-model="model" motorcycle-plate >');
+        const input = TestUtil.compile('<input type="text" ng-model="model" py-motorcycle-plate >');
         const tests = [
             { value: '123A', viewValue: '123-A' },
             { value: '123AB', viewValue: '123-AB' },
@@ -44,7 +44,7 @@ describe('motorcycle-plate', () => {
         // Arrange
         const plainInput = TestUtil.compile('<input ng-model="model1">');
 
-        const maskedInput = TestUtil.compile('<input type="text" ng-model="model" motorcycle-plate >');
+        const maskedInput = TestUtil.compile('<input type="text" ng-model="model" py-motorcycle-plate >');
 
         // Act
         const plainModel = plainInput.controller('ngModel');
@@ -56,7 +56,7 @@ describe('motorcycle-plate', () => {
     });
 
     it('must accept formatted initial model values', function () {
-        const newCarPlate = TestUtil.compile('<input type="text" ng-model="modelNewCar" motorcycle-plate >', {
+        const newCarPlate = TestUtil.compile('<input type="text" ng-model="modelNewCar" py-motorcycle-plate >', {
             modelNewCar: '123-ABCD'
         });
 
@@ -69,7 +69,7 @@ describe('motorcycle-plate', () => {
 
     it('must format partial values', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="text" ng-model="model" motorcycle-plate >');
+        var input = TestUtil.compile('<input type="text" ng-model="model" py-motorcycle-plate >');
         var tests = [
             { value: '', viewValue: '' },
             { value: '1', viewValue: '1' },
@@ -92,7 +92,7 @@ describe('motorcycle-plate', () => {
 
     it('must transform the lowercase to uppercase', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="text" ng-model="model" motorcycle-plate >');
+        var input = TestUtil.compile('<input type="text" ng-model="model" py-motorcycle-plate >');
         var tests = [
             { value: '123-a', viewValue: '123-A', modelValue: '123A' },
             { value: '123aa', viewValue: '123-AA', modelValue: '123AA' },
@@ -111,7 +111,7 @@ describe('motorcycle-plate', () => {
 
     it('must ignore incorrect typed order', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="text" ng-model="model" motorcycle-plate >');
+        var input = TestUtil.compile('<input type="text" ng-model="model" py-motorcycle-plate >');
         var tests = [
             { value: '', viewValue: '', modelValue: '' },
             { value: '1A', viewValue: '1', modelValue: '1' },
@@ -139,7 +139,7 @@ describe('motorcycle-plate', () => {
 
     it('must ignore non alphanumerics', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="text" ng-model="model" motorcycle-plate >');
+        var input = TestUtil.compile('<input type="text" ng-model="model" py-motorcycle-plate >');
         var tests = [
             { value: '@', viewValue: '', modelValue: '' },
             { value: '123A-', viewValue: '123-A', modelValue: '123A' },

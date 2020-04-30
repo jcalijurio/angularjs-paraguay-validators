@@ -1,6 +1,6 @@
 {
   "name": "angularjs-paraguay-validators",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "AngularJS directives for Paraguay data validators",
   "main": "angularjs-paraguay-validator.min.js",
   "scripts": {

@@ -2,13 +2,13 @@
 
 require('../directives');
 
-describe('individual-ruc', () => {
+describe('py-individual-ruc', () => {
 
     beforeEach(angular.mock.module('paraguay.validators'));
 
     it('must be valid when the value is valid', () => {
         // Arrange
-        const input = TestUtil.compile('<input type="tel" ng-model="model" individual-ruc >', {
+        const input = TestUtil.compile('<input type="tel" ng-model="model" py-individual-ruc >', {
             model: '54932874'
         });
 
@@ -21,7 +21,7 @@ describe('individual-ruc', () => {
 
     it('must be invalid when the value is invalid', () => {
         // Arrange
-        const input = TestUtil.compile('<input type="tel" ng-model="model" individual-ruc >', {
+        const input = TestUtil.compile('<input type="tel" ng-model="model" py-individual-ruc >', {
             model: '12345678'
         });
 
@@ -34,7 +34,7 @@ describe('individual-ruc', () => {
 
     it('must ignore validity when the value size is less than 8', () => {
         // Arrange
-        const input = TestUtil.compile('<input type="tel" ng-model="model" individual-ruc >', {
+        const input = TestUtil.compile('<input type="tel" ng-model="model" py-individual-ruc >', {
             model: '1234567'
         });
 
@@ -49,7 +49,7 @@ describe('individual-ruc', () => {
         // Arrange
         const plainInput = TestUtil.compile('<input ng-model="model1">');
 
-        const maskedInput = TestUtil.compile('<input type="tel" ng-model="model" individual-ruc >');
+        const maskedInput = TestUtil.compile('<input type="tel" ng-model="model" py-individual-ruc >');
 
         // Act
         const plainModel = plainInput.controller('ngModel');
@@ -62,7 +62,7 @@ describe('individual-ruc', () => {
 
     it('must format initial model values', () => {
         // Arrange
-        const input = TestUtil.compile('<input type="tel" ng-model="model" individual-ruc >', {
+        const input = TestUtil.compile('<input type="tel" ng-model="model" py-individual-ruc >', {
             model: '54932874'
         });
 
@@ -74,7 +74,7 @@ describe('individual-ruc', () => {
     });
 
     it('must accept formatted initial model values', function () {
-        var input = TestUtil.compile('<input type="tel" ng-model="model" individual-ruc >', {
+        var input = TestUtil.compile('<input type="tel" ng-model="model" py-individual-ruc >', {
             model: '5.493.287-4'
         });
 
@@ -87,7 +87,7 @@ describe('individual-ruc', () => {
 
     it('must format partial values', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="tel" ng-model="model" individual-ruc >');
+        var input = TestUtil.compile('<input type="tel" ng-model="model" py-individual-ruc >');
         var tests = [
             { value: '', viewValue: '', modelValue: '' },
             { value: '5', viewValue: '5', modelValue: '5' },
@@ -111,7 +111,7 @@ describe('individual-ruc', () => {
 
     it('must ignore non digits', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="tel" ng-model="model" individual-ruc >');
+        var input = TestUtil.compile('<input type="tel" ng-model="model" py-individual-ruc >');
         var tests = [
             { value: '#-@|_AZ*', viewValue: '', modelValue: '' },
             { value: '5!', viewValue: '5', modelValue: '5' },

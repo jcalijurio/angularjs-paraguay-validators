@@ -2,13 +2,13 @@
 
 require('../directives');
 
-describe('ruc', () => {
+describe('py-ruc', () => {
 
     beforeEach(angular.mock.module('paraguay.validators'));
 
     it('must be valid when the value is valid', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="tel" ng-model="model" ruc >');
+        var input = TestUtil.compile('<input type="tel" ng-model="model" py-ruc >');
         var tests = [
             '54932874',
             '223344559'
@@ -24,7 +24,7 @@ describe('ruc', () => {
 
     it('must be invalid when the value is invalid', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="tel" ng-model="model" ruc >');
+        var input = TestUtil.compile('<input type="tel" ng-model="model" py-ruc >');
         var tests = [
             '12345678',
             '22222222',
@@ -43,7 +43,7 @@ describe('ruc', () => {
 
     it('must ignore validity when the value size is less than 8', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="tel" ng-model="model" ruc >');
+        var input = TestUtil.compile('<input type="tel" ng-model="model" py-ruc >');
         var tests = [
             '1',
             '12',
@@ -66,7 +66,7 @@ describe('ruc', () => {
         // Arrange
         const plainInput = TestUtil.compile('<input ng-model="model1">');
 
-        const maskedInput = TestUtil.compile('<input type="tel" ng-model="model" ruc >');
+        const maskedInput = TestUtil.compile('<input type="tel" ng-model="model" py-ruc >');
 
         // Act
         const plainModel = plainInput.controller('ngModel');
@@ -79,7 +79,7 @@ describe('ruc', () => {
 
     it('must format model values', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="tel" ng-model="model" ruc >');
+        var input = TestUtil.compile('<input type="tel" ng-model="model" py-ruc >');
         var tests = [
             { value: '54932874', viewValue: '5.493.287-4' },
             { value: '223344559', viewValue: '22.334.455-9' }
@@ -96,10 +96,10 @@ describe('ruc', () => {
 
     it('must format initial model values', () => {
         // Arrange
-        const individualInput = TestUtil.compile('<input type="tel" ng-model="model1" ruc >', {
+        const individualInput = TestUtil.compile('<input type="tel" ng-model="model1" py-ruc >', {
             model1: '54932874'
         });
-        const companyInput = TestUtil.compile('<input type="tel" ng-model="model2" ruc >', {
+        const companyInput = TestUtil.compile('<input type="tel" ng-model="model2" py-ruc >', {
             model2: '223344559'
         });
 
@@ -114,10 +114,10 @@ describe('ruc', () => {
 
     it('must accept formatted initial model values', function () {
         // Arrange
-        const individualInput = TestUtil.compile('<input type="tel" ng-model="model1" ruc >', {
+        const individualInput = TestUtil.compile('<input type="tel" ng-model="model1" py-ruc >', {
             model1: '5.493.287-4'
         });
-        const companyInput = TestUtil.compile('<input type="tel" ng-model="model2" ruc >', {
+        const companyInput = TestUtil.compile('<input type="tel" ng-model="model2" py-ruc >', {
             model2: '22.334.455-9'
         });
 
@@ -132,7 +132,7 @@ describe('ruc', () => {
 
     it('must format partial values', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="tel" ng-model="model" ruc >');
+        var input = TestUtil.compile('<input type="tel" ng-model="model" py-ruc >');
         var tests = [
             { value: '', viewValue: '', modelValue: '' },
             { value: '5', viewValue: '5', modelValue: '5' },
@@ -157,7 +157,7 @@ describe('ruc', () => {
 
     it('must ignore non digits', () => {
         // Arrange
-        var input = TestUtil.compile('<input type="tel" ng-model="model" ruc >');
+        var input = TestUtil.compile('<input type="tel" ng-model="model" py-ruc >');
         var tests = [
             { value: '@', viewValue: '', modelValue: '' },
             { value: '2-', viewValue: '2', modelValue: '2' },
