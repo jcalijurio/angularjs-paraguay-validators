@@ -4,19 +4,40 @@ const { OldPattern, NewCarPattern, MotorcyclePattern } = require('../masks/plate
 const validator = require('../validators/validators');
 const maskFactory = require('../helpers/mask-factory');
 
+const newCarRegex = /^[A-Z]{4}\d{0,3}$/;
+const oldCarRegex = /^[A-Z]{1,3}\d{0,3}$/;
+const newMotoRegex = /^\d{1,3}[A-Z]{0,4}$/;
+
 module.exports = maskFactory({
-    clearValue: rawValue => rawValue.replace(/[^A-Za-z0-9]/g, '').toUpperCase(),
+    clearValue: rawValue => {
+        let adjustedValue = rawValue.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+
+        if (/^\d+/.test(adjustedValue))
+            adjustedValue = adjustedValue.replace(/^(\d{1,2})(\D+)(.*)$/g, '$1').replace(/^(\d{3})([^A-Z]+)(.*)$/g, '$1');
+        else
+            adjustedValue = adjustedValue.replace(/^([A-Z]{1,2})(\d+)(.*)$/g, '$1').replace(/^([A-Z]{4})(\D+)(.*)$/g, '$1')
+                .replace(/^([A-Z]{3})(\d{1,3})(.*)$/g, '$1$2');
+
+        return adjustedValue;
+    },
     format: cleanValue => {
         let pattern = MotorcyclePattern;
 
-        if (/^[A-Za-z]{3}\d/.test(cleanValue))
-            pattern = OldPattern;
-        else if (/^[A-Za-z]{1,4}/.test(cleanValue))
+        if (newCarRegex.test(cleanValue))
             pattern = NewCarPattern;
+        else if (oldCarRegex.test(cleanValue))
+            pattern = OldPattern;
 
         return (pattern.apply(cleanValue) || '').trim().replace(/[^A-Z0-9]$/, '');
     },
     validations: {
-        ruc: value => value.length < 6 || validator.Plate.validate(value)
+        ruc: value => {
+            let plateSize = 6;
+
+            if (newMotoRegex.test(value) || newCarRegex.test(value))
+                plateSize = 7;
+
+            return value.length < plateSize || validator.Plate.validate(value)
+        }
     }
 });

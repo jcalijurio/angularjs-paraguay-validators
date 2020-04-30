@@ -4,7 +4,7 @@ module.exports = config => {
     var configuration = {
         basePath: '../src',
         frameworks: ['jasmine', 'browserify'],
-        browsers: [/*'Firefox', 'Chrome',*/ 'ChromeHeadless', 'FirefoxHeadless' /*, 'ChromeHeadlessNoSandbox' */],
+        browsers: [/*'Firefox', 'Chrome',*//* 'ChromeHeadless',*/ 'FirefoxHeadless' /*, 'ChromeHeadlessNoSandbox' */],
         customLaunchers: {
             ChromeHeadlessNoSandbox: {
                 base: 'ChromeHeadless',
