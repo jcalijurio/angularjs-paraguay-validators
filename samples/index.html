@@ -94,6 +94,16 @@
             <pre>
 {{ phones | json}}
             </pre>
+            <h2>Zip Code</h2>
+            <div class="m-top">
+                <label for="zipcode">Zip Code:</label>
+                <input type="text" name="zipcode" id="zipcode" ng-model="zipcodes.general" minlength="4" maxlength="4" py-zipcode />
+                <span class="danger" ng-if="form1.zipcode.$error.zipcode">invalid</span>
+            </div>
+            <h3 class="m-top">Result</h3>
+            <pre>
+{{ phones | json}}
+            </pre>
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js"></script>

@@ -6,4 +6,5 @@ angular.module('paraguay.validators', [])
    .directive('pyOldCarPlate', [require('./plate/plate.old')])
    .directive('pyNewCarPlate', [require('./plate/plate.newcar')])
    .directive('pyMotorcyclePlate', [require('./plate/plate.motorcycle')])
-   .directive('pyPhone', [require('./phone/phone')]);
+   .directive('pyPhone', [require('./phone/phone')])
+   .directive('pyZipcode', [require('./zipcode/zipcode')]);

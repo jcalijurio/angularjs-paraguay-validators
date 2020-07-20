@@ -6,8 +6,6 @@ AngularJS Paraguay Validators
 AngularJS Paraguay Validators is a library that provides validators and masks for RUC numbers and Car Plate / AngularJS Paraguay Validators és una biblioteca que proporciona validaciones y máscaras para números RUC y Placas de vehículo.
 This library is a port of [paraguay-validators](https://www.npmjs.com/package/paraguay-validators) package for AngularJS.
 
-> Warning: For compability with others libraries we are introducing the 'py' prefix to solve the incompatibility problems. So, the directives without 'py' prefix are now deprecated and will be removed in version 1.3.
-
 ## Installation ##
 
 ### With npm
@@ -68,8 +66,7 @@ app.controller('mycontroller', ['$scope', $scope => {
 <input type="tel" name="phone-name" ng-model="model" py-phone />
 ```
 
-## ROADMAP ##
-
-New validators and masks to be implemented.
-
-  - Postal Code
+### ZIP CODE
+```html
+<input type="tel" name="zipcode-name" ng-model="model" py-zipcode />
+```
