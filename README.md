@@ -27,7 +27,7 @@ The module code you need to import is 'paraguay.validators'
 ```javascript
 const app = angular.module('mymodule', ['paraguay.validators']); // Import example.
 
-app.controller('mycontroller', ['$scope', () => {
+app.controller('mycontroller', ['$scope', $scope => {
   // controller behavior here...
 }]);
 ```
@@ -38,34 +38,38 @@ app.controller('mycontroller', ['$scope', () => {
 
 ```html
 <!-- for both RUC types -->
-<input type="tel" name="ruc-name" id="ruc-id" ng-model="model" py-ruc />
+<input type="tel" name="ruc-name" ng-model="model" py-ruc />
 
 <!-- for individual RUC type -->
-<input type="tel" name="ruc-name" id="ruc-id" ng-model="model" py-individual-ruc />
+<input type="tel" name="ruc-name" ng-model="model" py-individual-ruc />
 
 <!-- for company RUC type -->
-<input type="tel" name="ruc-name" id="ruc-id" ng-model="model" py-company-ruc />
+<input type="tel" name="ruc-name" ng-model="model" py-company-ruc />
 ```
 
 ### PLATE ###
 
 ```html
 <!-- for all valid formats -->
-<input type="text" name="plate-name" id="plate-id" ng-model="model" py-car-plate />
+<input type="text" name="plate-name" ng-model="model" py-car-plate />
 
 <!-- for old format -->
-<input type="text" name="plate-name" id="plate-id" ng-model="model" py-old-car-plate />
+<input type="text" name="plate-name" ng-model="model" py-old-car-plate />
 
 <!-- for new car format -->
-<input type="text" name="plate-name" id="plate-id" ng-model="model" py-new-car-plate />
+<input type="text" name="plate-name" ng-model="model" py-new-car-plate />
 
 <!-- for motorcyle format -->
-<input type="text" name="plate-name" id="plate-id" ng-model="model" py-motorcycle-plate />
+<input type="text" name="plate-name" ng-model="model" py-motorcycle-plate />
+```
+
+### PHONE NUMBER
+```html
+<input type="tel" name="phone-name" ng-model="model" py-phone />
 ```
 
 ## ROADMAP ##
 
 New validators and masks to be implemented.
 
-  - Phone
   - Postal Code
